@@ -1,4 +1,4 @@
-# README
+# DB設計
 
 ## massagesテーブル
 |Column|Type|Options|
