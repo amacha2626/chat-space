@@ -30,7 +30,7 @@
       justify-content: space-between;
       &__name{
         line-height: 20px;
-        color: $sideBar-font-color;
+        color: $FontBackground-color-white;
         font-size: 16px;
       }
       &__option{
@@ -38,7 +38,7 @@
         width: 60px;
         text-align: right;
         &__icon{
-          color: $sideBar-font-color;
+          color: $FontBackground-color-white;
           text-decoration: none;
           margin-left:5px;
         }
@@ -47,9 +47,9 @@
   }
   &__group-list{
     height: calc(100vh - 100px);
-    background-color: #2f3e51;
+    background-color: $groupList-background-color;
     &__group{
-      color: $sideBar-font-color;
+      color: $FontBackground-color-white;
       padding:20px 20px 40px 20px;
       &__title{
         margin-bottom: 5px;
@@ -65,25 +65,24 @@
 .chat-main{
   height: 100vh;
   width: calc(100% - 300px);
-  background-color: #ffffff;
+  background-color: $FontBackground-color-white;
   float:left;
   &__group-info{
     height: 100px;
-    background-color: #ffffff;
-    border-bottom:1px solid #eeeeee;
+    background-color: $FontBackground-color-white;
+    border-bottom:1px solid $info-border-color;
     padding-left: 40px;
     padding-right: 40px;
     @include flexbox-between();
     &__left-container{
-      color: #333333;
       &__title{
-        color: #333333;
+        color: $group-TitleName-color;
         font-size: 20px;
         margin-top:35px;
         margin-bottom: 15px;
       }
       &__member{
-        color: #999999;
+        color: $group-MemberTime-color;
         font-size:12px;
       }
     }
@@ -92,9 +91,9 @@
       height: 40px;
       &__edit{
         padding: 0 20px;
-        border: 1px solid #38aef0;
+        border: 1px solid $group-EditSend-color;
         text-decoration: none;
-        color: #38aef0;
+        color: $group-EditSend-color;
         font-size: 16px;
         line-height: 40px;
         display: inline-block;
@@ -103,7 +102,7 @@
   }
   &__message-list{
     height: calc(100vh - 100px - 1px - 90px);
-    background-color: #fafafa;
+    background-color: $message-list-background-color;
     padding:35px 40px 35px 40px;
     &__message-container{
       width: 100%;
@@ -114,17 +113,17 @@
           display: flex;
           margin-bottom: 12px;
           &__name{
-            color: #333333;
+            color: $group-TitleName-color;
             font-size: 16px;
           }
           &__update-time{
-            color: #999999;
+            color: $group-MemberTime-color;
             font-size: 12px;
             margin-left: 10px;
           }
         }
         &__text{
-          color: #434A54;
+          color: $message-text-color;
           font-size: 14px;
         }
       }
@@ -132,7 +131,7 @@
   }
   &__message-form{
     height: 90px;
-    background-color: #d2d2d2;
+    background-color: $message-form-background-color;
     padding: 10px 40px 10px 40px;
     @include flexbox-between();
     &__textarea{
@@ -157,11 +156,11 @@
       }
     }
     &__send{
-      background-color: #38aef0;
+      background-color: $group-EditSend-color;
       width: 100px;
       height: 50px;
       margin-left: 15px;
-      color: #ffffff;
+      color: $FontBackground-color-white;
       cursor: pointer;
     }
   }
