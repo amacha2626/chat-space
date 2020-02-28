@@ -4,7 +4,7 @@
       %p.chat-main__group-info__left-container__title techcamp
       %p.chat-main__group-info__left-container__member Member : taro yamada
     .chat-main__group-info__right-container
-      = link_to "#", class: "chat-main__group-info__right-container__edit" do
+      = link_to edit_group_path(@group.id), class: "chat-main__group-info__right-container__edit" do
         Edit
   .chat-main__message-list
     .chat-main__message-list__message-container
