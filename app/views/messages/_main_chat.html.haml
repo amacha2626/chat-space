@@ -1,27 +1,23 @@
 .chat-main
   .chat-main__group-info
     .chat-main__group-info__left-container
-      %p.chat-main__group-info__left-container__title techcamp
-      %p.chat-main__group-info__left-container__member Member : taro yamada
+      %p.chat-main__group-info__left-container__title
+        = @group.name
+      %p.chat-main__group-info__left-container__member
+        Member : 
+        - @users.each do |user|
+          = user.name
     .chat-main__group-info__right-container
       = link_to edit_group_path(@group.id), class: "chat-main__group-info__right-container__edit" do
         Edit
   .chat-main__message-list
     .chat-main__message-list__message-container
-      .chat-main__message-list__message-container__message
-        .chat-main__message-list__message-container__message__message-upper
-          %p.chat-main__message-list__message-container__message__message-upper__name taro
-          %p.chat-main__message-list__message-container__message__message-upper__update-time 2020/02/27(Thu) 14:40:22
-        %p.chat-main__message-list__message-container__message__text こんにちは
-      .chat-main__message-list__message-container__message
-        .chat-main__message-list__message-container__message__message-upper
-          %p.chat-main__message-list__message-container__message__message-upper__name yamada
-          %p.chat-main__message-list__message-container__message__message-upper__update-time 2020/02/27(Thu) 14:50:30
-        %p.chat-main__message-list__message-container__message__text どうも！！！
-  %form.chat-main__message-form
-    .chat-main__message-form__textarea
-      %input.chat-main__message-form__textarea__form(type="text" placeholder="type a message")/
-      %label.chat-main__message-form__textarea__image
-        = icon("fa", "image")
-        %input(type="file")/
-    %input.chat-main__message-form__send(type="submit" value="Send")/ 
+      = render @messages
+  = form_for [@group, @message] do |f|
+    .chat-main__message-form
+      .chat-main__message-form__textarea
+        =f.text_field :content, class: "chat-main__message-form__textarea__form", placeholder: "type a message"
+        =f.label :image, class: "chat-main__message-form__textarea__image" do
+          = icon("fa", "image")
+          =f.file_field :image
+      =f.submit "Send", class: "chat-main__message-form__send"
