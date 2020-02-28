@@ -14,7 +14,7 @@
     - current_user.groups.each do |group|
       .side-bar__group-list__group
         .side-bar__group-list__group__title
-          = link_to "#", class: "side-bar__group-list__group__title__link" do
+          = link_to group_messages_path(group.id),method: :get, class: "side-bar__group-list__group__title__link" do
             = group.name
         .side-bar__group-list__group__latest-message
-          %p メッセージはまだありません
+          = group.show_last_message
