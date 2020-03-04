@@ -32,7 +32,7 @@
             .chat-group-user.clearfix.js-chat-member#chat-group-user-8
               %input{name: "group[user_ids][]", type: "hidden", value: user.id}
               %p.chat-group-user__name= user.name
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+              %div.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{ data: {user: {id: 'user.id',name: 'user.name'}} }
                 削除
 
   .chat-group-form__field.clearfix
