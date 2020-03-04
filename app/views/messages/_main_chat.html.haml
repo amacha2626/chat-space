@@ -13,7 +13,7 @@
   .chat-main__message-list
     .chat-main__message-list__message-container
       = render @messages
-  = form_for [@group, @message] do |f|
+  = form_for [@group, @message], id: "new_message" do |f|
     .chat-main__message-form
       .chat-main__message-form__textarea
         =f.text_field :content, class: "chat-main__message-form__textarea__form", placeholder: "type a message"
